@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#d9d9d9"
+    >
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/friendListPic"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_margin="20dp"
+        android:src="@drawable/userdefaul" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+
+        android:layout_toRightOf="@+id/friendListPic"
+        android:text="Adnan Ahmed"
+        android:textColor="#000"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/tvAdmin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Love Me Like You do"
+        android:textColor="#949494"
+        android:layout_alignBottom="@+id/friendListPic"
+        android:layout_toLeftOf="@+id/ivAdd"
+        android:layout_below="@+id/tvName"
+        android:layout_alignLeft="@+id/tvName"
+        android:layout_alignStart="@+id/tvName"></TextView>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ivAdd"
+        android:src="@drawable/addfriend"
+        android:layout_above="@+id/tvAdmin"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="31dp"
+        android:layout_marginEnd="31dp" />
+</RelativeLayout>

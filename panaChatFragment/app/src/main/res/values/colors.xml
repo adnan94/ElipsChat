@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#004D40</color>
+    <color name="colorPrimaryDark">#004D40</color>
+    <color name="colorAccent">#004D40</color>
+    <color name="sinch_purple">#ff63029d</color>
+    <color name="off_white">#fffafafa</color>
+    <color name="greyish">#fff2f1f2</color>
+    <color name="grey">#d9d9d9</color>
+    <color name="sent">#de000f</color>
+    <color name="trans">#00000000</color>
+
+</resources>

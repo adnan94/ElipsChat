@@ -1,0 +1,124 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00d9d9d9"
+    android:focusable="true"
+    android:clickable="true"
+    tools:context="com.example.adnan.panachatfragment.Fragments.SignUpFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:background="#d9d9d9"
+        android:padding="15dp">
+
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="Sign Up Free !"
+            android:textColor="#d2010f"
+            android:textSize="20dp" />
+
+
+        <TextView
+            android:id="@+id/signUpTextFirstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titleText"
+            android:layout_marginTop="10dp"
+            android:text="First Name  :"
+            android:textColor="#004D40" />
+
+        <EditText
+            android:id="@+id/editTextSignUpFirstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/signUpTextFirstName"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/edit_squar"
+            android:ems="10"
+
+            />
+
+        <TextView
+            android:id="@+id/signUpTextLastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextSignUpFirstName"
+            android:layout_marginTop="5dp"
+            android:text="Last Name  :"
+            android:textColor="#004D40" />
+
+        <EditText
+            android:id="@+id/editTextSignUpLastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/signUpTextLastName"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/edit_squar"
+            android:ems="10"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/signUpTextEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextSignUpLastName"
+            android:layout_marginTop="5dp"
+            android:text="Email  :"
+            android:textColor="#004D40" />
+
+        <EditText
+            android:id="@+id/editTextSignUpEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/signUpTextEmail"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/edit_squar"
+            android:ems="10"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/signUpTextPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextSignUpEmail"
+            android:layout_marginTop="5dp"
+            android:text="Password  :"
+            android:textColor="#004D40" />
+
+        <EditText
+            android:id="@+id/editTextSignUpPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/signUpTextPassword"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/edit_squar"
+            android:ems="10"
+            android:textColor="#000" />
+
+        <Button
+            android:id="@+id/signUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextSignUpPassword"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="#00000000"
+            android:text="Submit"
+            android:textColor="#004D40"
+            />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

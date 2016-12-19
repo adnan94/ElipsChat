@@ -1,0 +1,19 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="#d9d9d9"
+    tools:context="com.example.adnan.panachatfragment.Fragments.AllGroupsList">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ListView
+        android:id="@+id/GrouplistView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:divider="@null"
+        android:focusable="true"></ListView>
+
+</FrameLayout>

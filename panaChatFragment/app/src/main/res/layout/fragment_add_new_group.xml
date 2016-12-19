@@ -1,0 +1,78 @@
+<!--<ScrollView
+xmlns:android="http://schemas.android.com/apk/res/android"-->
+
+<!--xmlns:tools="http://schemas.android.com/tools"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent"--><!--tools:context="com.example.adnan.panachatfragment.Fragments.AddNewGroup"-->
+
+<!-->-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#d9d9d9"
+    android:clickable="true"
+    android:focusable="true"
+
+    android:padding="15dp"
+    tools:context="com.example.adnan.panachatfragment.Fragments.AddNewGroup"
+
+    >
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <!-- TODO: Update blank fragment layout -->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/sadsa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="59dp"
+                android:text="Give The Name Of Group"
+                android:textColor="#004D40"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/groupNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/sadsa"
+                android:layout_marginTop="10dp"
+
+                android:background="@drawable/edit_squar"
+                android:hint="Group name"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/groupPicButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/groupNameEditText"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/squar"
+                android:text="Group Image"
+                android:textColor="#fff" />
+
+            <Button
+                android:id="@+id/groupSubmitBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/groupPicButton"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/squar"
+                android:text="SUBMIT"
+                android:textColor="#fff" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

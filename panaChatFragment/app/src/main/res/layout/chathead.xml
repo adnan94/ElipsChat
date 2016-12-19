@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/chathead_relativelayout">
+    
+    <com.mikhaellopez.circularimageview.CircularImageView android:layout_width="130dp"
+        android:layout_height="130dp"
+        app:border_width="0dp"
+        android:id="@+id/chathead_img"
+        android:src="@drawable/group_default" />
+    
+   
+
+</RelativeLayout>

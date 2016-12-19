@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxHeight="150dp"
+        android:maxWidth="150dp"
+        android:layout_alignParentRight="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/contentWithBackground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/in_message_bg"
+            android:paddingLeft="10dp"
+            android:paddingBottom="10dp"
+            android:orientation="vertical">
+
+            <github.ankushsachdeva.emojicon.EmojiconTextView
+                android:id="@+id/RmessageUI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="dasdasdasdas"
+                android:textSize="15dp"
+                android:textColor="@android:color/black"
+                android:maxWidth="240dp" />
+
+            <TextView
+                android:id="@+id/RtimeUI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="asdsadsad"
+                android:textSize="12sp"
+
+                android:textColor="#fff" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxHeight="350dp"
+                android:maxWidth="350dp"
+                android:id="@+id/RimageView"
+                android:background="@drawable/rounded_corneres"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_below="@+id/content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

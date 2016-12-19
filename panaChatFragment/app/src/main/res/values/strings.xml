@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Elips</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="title_activity_after_login_screen">AfterLoginScreen</string>
+    <string name="facebook_app_id">1692642001010869</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="fb_login_protocol_scheme">1692642001010869</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main3">Main3Activity</string>
+    <string name="title_activity_deletee">deletee</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_maps2">Map</string>
+</resources>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
+        android:maxHeight="150dp"
+        android:maxWidth="150dp"
+        android:orientation="horizontal">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/contentWithBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/out_message_bg"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_alignTop="@+id/content"
+        android:layout_toRightOf="@+id/mLgroupUserPic"
+        android:layout_toEndOf="@+id/mLgroupUserPic">
+
+        <TextView
+            android:id="@+id/mLnameUI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="240dp"
+            android:text="Adnan Ahmed"
+            android:textColor="#fff"
+            android:textSize="19dp" />
+
+        <github.ankushsachdeva.emojicon.EmojiconTextView
+            android:id="@+id/mLtimeUI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="190dp"
+            android:text="Good luck miss you take care bye"
+            android:textColor="#000"
+
+            android:textSize="13sp" />
+
+        <ImageView
+            android:id="@+id/mLimageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/content"
+            android:layout_marginBottom="15dp"
+            android:layout_marginRight="15dp"
+            android:maxHeight="350dp"
+            android:maxWidth="350dp" />
+
+    </LinearLayout>
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/mLgroupUserPic"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+
+        android:src="@drawable/userdefaul"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"></com.mikhaellopez.circularimageview.CircularImageView>
+</RelativeLayout>

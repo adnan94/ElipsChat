@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".Activities.AfterLoginScreen">
+
+
+    <include layout="@layout/content_after_login_screen" />
+
+    <!--<RelativeLayout-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center|end"-->
+    <!--&gt;-->
+
+    <!--<com.mikhaellopez.circularimageview.CircularImageView-->
+    <!--android:id="@+id/view1"-->
+    <!--android:layout_width="60dp"-->
+    <!--android:layout_height="60dp"-->
+    <!--android:background="@drawable/ddddddd"></com.mikhaellopez.circularimageview.CircularImageView>-->
+
+    <!--<com.mikhaellopez.circularimageview.CircularImageView-->
+    <!--android:id="@+id/view2"-->
+    <!--android:layout_width="60dp"-->
+    <!--android:layout_height="60dp"-->
+    <!--android:layout_below="@id/view1"-->
+    <!--android:layout_marginTop="5dp"-->
+    <!--android:background="@drawable/ddddddd"></com.mikhaellopez.circularimageview.CircularImageView>-->
+
+
+    <!--</RelativeLayout>-->
+
+    <!--<android.support.design.widget.FloatingActionButton-->
+    <!--android:id="@+id/fabb"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="bottom|end"-->
+    <!--android:layout_margin="@dimen/fab_margin"-->
+    <!--app:srcCompat="@android:drawable/ic_dialog_email" />-->
+    <com.capricorn.ArcMenu
+        android:id="@+id/arc_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        app:fromDegrees="30.0"
+        app:toDegrees="100.0"
+        app:childSize="30dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+
+        />
+</android.support.design.widget.CoordinatorLayout>

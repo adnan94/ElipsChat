@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "1037868130316",
+    "firebase_url": "https://notification-179c5.firebaseio.com",
+    "project_id": "notification-179c5",
+    "storage_bucket": "notification-179c5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1037868130316:android:670be6bc10c684a6",
+        "android_client_info": {
+          "package_name": "com.aziz.notification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1037868130316-5hi43vo80o7qpmra65p29pj54nmslj3v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkj3OKZcPAtYn8Vqlg7QewhnP7BaUBXzA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1037868130316:android:d9970071e69d901e",
+        "android_client_info": {
+          "package_name": "com.example.adnan.panachatfragment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1037868130316-5hi43vo80o7qpmra65p29pj54nmslj3v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkj3OKZcPAtYn8Vqlg7QewhnP7BaUBXzA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

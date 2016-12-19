@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000"
+    android:orientation="vertical"
+
+    >
+
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/friendListPic"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_margin="20dp"
+
+        android:src="@drawable/userdefaul" />
+
+    <TextView
+        android:id="@+id/friendListTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+
+        android:layout_toRightOf="@+id/friendListPic"
+        android:text="Adnan Ahmed"
+        android:textColor="#000"
+        android:textSize="20dp" />
+
+    <github.ankushsachdeva.emojicon.EmojiconTextView
+        android:id="@+id/friendListTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/friendListPic"
+        android:layout_alignLeft="@+id/friendListTextView"
+        android:layout_alignStart="@+id/friendListTextView"
+        android:text="Avilable"
+        android:textColor="#949494"></github.ankushsachdeva.emojicon.EmojiconTextView>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/friendListTextView"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="31dp"
+        android:visibility="gone"
+        android:layout_marginRight="31dp"
+        android:background="#00000000"
+         />
+</RelativeLayout>

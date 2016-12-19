@@ -1,0 +1,109 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#d9d9d9"
+    tools:context=".Fragments.ContactsInformation">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#d9d9d9"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="20dp">
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:text="Email"
+
+            android:textColor="#004D40"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/editTextInfoEmail"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+
+            android:layout_below="@+id/textView"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/edit_squar"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+
+            android:layout_below="@+id/editTextInfoEmail"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:text="Date Of Birth"
+            android:textColor="#004D40"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/editTextInfoDateOfBirth"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/textView2"
+
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+
+            android:background="@drawable/edit_squar"
+            android:ems="10"
+            android:inputType="date"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextInfoDateOfBirth"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+
+            android:text="Contact Number"
+            android:textColor="#004D40"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/editTextInfoContact"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/textView3"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_squar"
+            android:ems="10"
+
+            android:inputType="phone"
+            android:textColor="#000" />
+
+
+        <Button
+            android:id="@+id/updateButton"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextInfoContact"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginTop="50dp"
+
+            android:background="@drawable/squar"
+            android:text="Update"
+            android:textColor="#d9d9d9" />
+        <!--</LinearLayout>-->
+    </RelativeLayout>
+</ScrollView>

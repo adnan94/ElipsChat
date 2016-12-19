@@ -1,0 +1,58 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootStatus"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#d9d9d9"
+    android:padding="20dp"
+    android:clickable="true"
+    android:focusable="true"
+    tools:context="com.example.adnan.panachatfragment.Fragments.StatusFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Update Your Status "
+        android:textColor="#004D40"
+        android:textSize="25dp"></TextView>
+
+    <ImageButton
+        android:id="@+id/emojiiButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView4"
+        android:layout_marginRight="3dp"
+        android:layout_marginTop="42dp"
+        android:background="#00000000"
+        android:src="@drawable/ic_msg_panel_smiles" />
+
+    <github.ankushsachdeva.emojicon.EmojiconEditText
+        android:id="@+id/emojiiStatus"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/textView4"
+        android:layout_marginTop="40dp"
+        android:layout_toEndOf="@+id/emojiiButton"
+        android:layout_toRightOf="@+id/emojiiButton"
+        android:background="@drawable/edit_squar"
+        android:textAlignment="center"
+        android:hint="Status" />
+
+    <Button
+        android:id="@+id/SubmitEmojStatus"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/emojiiStatus"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/squar"
+
+        android:text="Update"
+        android:textColor="#fff" />
+</RelativeLayout>
