@@ -66,6 +66,7 @@ import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.mikhaellopez.circularimageview.CircularImageView;
@@ -100,8 +101,6 @@ public class AfterLoginScreen extends BaseActivity implements NavigationView.OnN
     private static final int[] ITEM_DRAWABLES = {R.drawable.groupadd, R.drawable.friendadd};
     private ArcMenu arcMenu;
     View indicator;
-    //    ArrayAdapter<String> arrayAdapter;
-//    ArrayList<String> str;
     PopupWindow popupWindow;
     TextView alternate;
 
@@ -262,10 +261,6 @@ public class AfterLoginScreen extends BaseActivity implements NavigationView.OnN
                 Frient_Req_Signature signature = dataSnapshot.getValue(Frient_Req_Signature.class);
                 Log.d("Tagee", key);
                 listNoti.add(new Frient_Req_Signature(signature.getName(), signature.getPicUrl(), key));
-
-//                count = list.size();
-
-
                 adaptorNoti.notifyDataSetChanged();
 
             }
@@ -275,7 +270,6 @@ public class AfterLoginScreen extends BaseActivity implements NavigationView.OnN
 
             }
         });
-
 
 
     }
@@ -458,7 +452,7 @@ public class AfterLoginScreen extends BaseActivity implements NavigationView.OnN
             alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    LoginManager.getInstance().logOut();
+
                     Intent stop = new Intent(AfterLoginScreen.this, Service.class);
                     stopService(stop);
                     pref.edit().remove("uid");
@@ -471,7 +465,11 @@ public class AfterLoginScreen extends BaseActivity implements NavigationView.OnN
 //                    edit.putString("picUrl",Global.picUrl);
 //                    Service s = new Service();
 //                    s.stopSelf();
-
+                    if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+                        FirebaseAuth.getInstance().signOut();
+                    } else {
+                        LoginManager.getInstance().logOut();
+                    }
                     finish();
 
                     Intent i = new Intent(AfterLoginScreen.this, FacebookAuthActivity.class);

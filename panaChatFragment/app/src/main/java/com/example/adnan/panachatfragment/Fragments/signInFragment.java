@@ -60,6 +60,7 @@ import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.storage.FirebaseStorage;
@@ -163,13 +164,13 @@ public class signInFragment extends android.support.v4.app.Fragment implements S
             Log.d("TAGi", "" + profile.getId());
             Log.d("TAGi", "" + profile.getName());
 
-            text.setText(profile.getName());
+//            text.setText(profile.getName());
 //            text2.setText(profile.getName());
             pref = getActivity().getSharedPreferences("SignInData", Context.MODE_PRIVATE);
 
 
-            Global.uid = profile.getId();
-            Global.name = profile.getName();
+//            Global.uid = profile.getId();
+//            Global.name = profile.getName();
             if (Global.uid != null) {
                 final Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
@@ -191,7 +192,7 @@ public class signInFragment extends android.support.v4.app.Fragment implements S
 
                     if (dataSnapshot.hasChild(profile.getId())) {
                         dialog.dismiss();
-                        get();
+                        get(profile.getId());
                     } else {
 
                         Toast.makeText(getActivity(), "Saving New User Data", Toast.LENGTH_SHORT).show();
@@ -215,6 +216,50 @@ public class signInFragment extends android.support.v4.app.Fragment implements S
 
                 }
             });
+        } else {
+//            Log.d("TAGi", "" + profile.getId());
+//            Log.d("TAGi", "" + profile.getName());
+
+//            text.setText(profile.getName());
+
+
+            final String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+//            text2.setText(profile.getName());
+//            pref = getActivity().getSharedPreferences("SignInData", Context.MODE_PRIVATE);
+
+
+            if (userId != null) {
+                final Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+//                Log.i(TAG, "I've waited for two hole seconds to show this!");
+                        Map<String, String> map = new HashMap<>();
+                        map.put("value", "online");
+                        fire.child("AppData").child("Status").child(userId).setValue(map);
+
+                    }
+                }, 3000);
+            }
+
+
+            fire.child("AppData").child("BasicInfo").addListenerForSingleValueEvent(new com.google.firebase.database.ValueEventListener() {
+                @Override
+                public void onDataChange(com.google.firebase.database.DataSnapshot dataSnapshot) {
+
+//                    if (dataSnapshot.hasChild(userId)) {
+                        dialog.dismiss();
+                        get(userId);
+//                    }
+
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+
         }
 
 
@@ -279,8 +324,8 @@ public class signInFragment extends android.support.v4.app.Fragment implements S
     }
 
 
-    public void get() {
-        FireBaseHandler.getInstance().getCurrentProfileData(profile.getId(), new InterFace<com.google.firebase.database.DataSnapshot, FirebaseError>() {
+    public void get(String id) {
+        FireBaseHandler.getInstance().getCurrentProfileData(id, new InterFace<com.google.firebase.database.DataSnapshot, FirebaseError>() {
             @Override
             public void sucess(com.google.firebase.database.DataSnapshot dataSnapshot) {
                 User u = dataSnapshot.getValue(User.class);
@@ -293,6 +338,7 @@ public class signInFragment extends android.support.v4.app.Fragment implements S
                 Global.contact = u.getContact();
                 Global.status = u.getStatus();
                 Global.email = u.getEmail();
+                text.setText(Global.name );
                 dialog.dismiss();
 
             }
@@ -479,8 +525,8 @@ public class signInFragment extends android.support.v4.app.Fragment implements S
 
 //    Log.d("rrrrr", "" + profile.getId());
         SharedPreferences.Editor edit = pref.edit();
-        edit.putString("uid", profile.getId());
-        edit.putString("name", profile.getName());
+        edit.putString("uid", Global.uid);
+        edit.putString("name", Global.name);
         edit.putString("picUrl", Global.picUrl);
 //            edit.putString("name", profile.getName());
 

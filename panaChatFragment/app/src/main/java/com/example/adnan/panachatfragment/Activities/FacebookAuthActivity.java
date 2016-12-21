@@ -13,14 +13,17 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -45,6 +48,11 @@ import com.facebook.ProfileTracker;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.viewpagerindicator.CirclePageIndicator;
 
 import java.security.MessageDigest;
@@ -70,6 +78,9 @@ public class FacebookAuthActivity extends AppCompatActivity {
     ViewPager pager;
     int currentItem = 0;
     int numPages = 0;
+    EditText email, pass;
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
 
 
     @Override
@@ -77,23 +88,27 @@ public class FacebookAuthActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         fa = FacebookAuthActivity.this;
         FacebookSdk.sdkInitialize(getApplicationContext());
+        mAuth = FirebaseAuth.getInstance();
+
         setContentView(R.layout.activity_main2);
-      String hash=printKeyHash(this);
+        String hash = printKeyHash(this);
         setRequestedOrientation(ActivityInfo
                 .SCREEN_ORIENTATION_PORTRAIT);
         con = FacebookAuthActivity.this;
         loginButton = (LoginButton) findViewById(R.id.login_button);
         callbackManager = CallbackManager.Factory.create();
-        Log.d("TAGi",hash);
+        Log.d("TAGi", hash);
         init();
-        ((Button)findViewById(R.id.SubmitBtn)).setOnClickListener(new View.OnClickListener() {
+        email = (EditText) findViewById(R.id.editEmail);
+        pass = (EditText) findViewById(R.id.editPassword);
+        ((Button) findViewById(R.id.SubmitBtn)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(FacebookAuthActivity.this, "Currently not implemented", Toast.LENGTH_SHORT).show();
             }
         });
 
-        ((TextView)findViewById(R.id.textSignUp1)).setOnClickListener(new View.OnClickListener() {
+        ((TextView) findViewById(R.id.textSignUp1)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FragmentManager manager = getSupportFragmentManager();
@@ -142,6 +157,65 @@ public class FacebookAuthActivity extends AppCompatActivity {
 
             }
         });
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null) {
+
+                    // User is signed in
+                    Toast.makeText(FacebookAuthActivity.this, "Signing In", Toast.LENGTH_SHORT).show();
+
+                    Intent i = new Intent(FacebookAuthActivity.this, AfterLoginScreen.class);
+                    startActivity(i);
+//                    Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
+                } else {
+                    // User is signed out
+//                    Log.d(TAG, "onAuthStateChanged:signed_out");
+//                                                Toast.makeText(FacebookAuthActivity.this, "On sucess token not null", Toast.LENGTH_SHORT).show();
+
+                }
+                // ...
+            }
+        };
+        ((Button) findViewById(R.id.SubmitBtn)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String mEmail = email.getText().toString();
+                String password = pass.getText().toString();
+                if (TextUtils.isEmpty(mEmail)) {
+                    email.setError("Plz Enter The Email First");
+                }
+                if (TextUtils.isEmpty(password)) {
+                    pass.setError("Plz Enter Password First");
+                }
+                mAuth.signInWithEmailAndPassword(mEmail, password)
+                        .addOnCompleteListener(FacebookAuthActivity.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+//                                Log.d(TAG, "signInWithEmail:onComplete:" + task.isSuccessful());
+
+                                // If sign in fails, display a message to the user. If sign in succeeds
+                                // the auth state listener will be notified and logic to handle the
+                                // signed in user can be handled in the listener.
+                                if (!task.isSuccessful()) {
+//                                    Log.w(TAG, "signInWithEmail:failed", task.getException());
+                                    Toast.makeText(FacebookAuthActivity.this, "Auth Error",
+                                            Toast.LENGTH_SHORT).show();
+                                }else{
+                                    Toast.makeText(FacebookAuthActivity.this, "Sucessfully Signed In",
+                                            Toast.LENGTH_SHORT).show();
+
+
+                                }
+
+                                // ...
+                            }
+                        });
+
+
+            }
+        });
     }
 
     public void checkAuth() {
@@ -181,6 +255,15 @@ public class FacebookAuthActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mAuth.removeAuthStateListener(mAuthListener);
+
     }
 
     @Override

@@ -459,7 +459,7 @@ public class Service extends android.app.Service {
         sUrl = picUrl;
         sMsg = mesage;
         sName = name;
-        floatingNew(name, mesage, picUrl, id, uid);
+//        floatingNew(name, mesage, picUrl, id, uid);
 
         notificationManager.notify(0, notification);
 

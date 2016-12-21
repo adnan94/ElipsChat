@@ -17,4 +17,6 @@
     <string name="title_activity_deletee">deletee</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_maps2">Map</string>
+    <string name="auth_failed">Failed</string>
+    <string name="auth_sucess">Succesful</string>
 </resources>
